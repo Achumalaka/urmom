@@ -1,0 +1,156 @@
+local player = game.Players.LocalPlayer
+local Tween = game:GetService("TweenService")
+local CoreGui = game:GetService("CoreGui")
+local UI = Instance.new("ScreenGui")
+local Corner = Instance.new("UICorner") 
+local Loader = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local Title2 = Instance.new("TextLabel")
+local Asset = Instance.new("TextLabel")
+local Asset2 = Instance.new("TextLabel")
+local Asset3 = Instance.new("TextLabel")
+local PositionClosed = UDim2.new(-1, 0, 0, 105)
+local PositionOpen = UDim2.new(0, 270, 0, 105)
+local bar = Instance.new("Frame")
+local Corner2 = Instance.new("UICorner") 
+
+UI.Name = "UI"
+UI.Parent = CoreGui
+
+Corner.Name = "Corner"
+Corner.Parent = Loader
+
+Loader.Name = "Loader"
+Loader.Parent = UI
+Loader.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+Loader.Size = UDim2.new(0, 330, 0, 135)
+Loader.Position = PositionClosed
+Loader.Draggable = true
+Loader.Active = true
+
+Title.Name = "Title"
+Title.Parent = Loader
+Title.BackgroundColor3 = Color3.fromRGB(28, 115, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0, 85, 0, 10)
+Title.Size = UDim2.new(0, 150, 0, 25)
+Title.Font = Enum.Font.GothamBlack
+Title.Text = "CST Loader v1.1"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+
+ImageLabel.Name = "ImageLabel"
+ImageLabel.Parent = Loader
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Position = UDim2.new(0, 25, 0, 5)
+ImageLabel.Size = UDim2.new(0, 35, 0, 30)
+ImageLabel.Image = " "
+
+Title2.Name = "Title2"
+Title2.Parent = Loader
+Title2.BackgroundColor3 = Color3.fromRGB(28, 115, 255)
+Title2.BackgroundTransparency = 1.000
+Title2.Position = UDim2.new(0, 85, 0, 30)
+Title2.Size = UDim2.new(0, 70, 0, 15)
+Title2.Font = Enum.Font.GothamBlack
+Title2.Text = "Please wait"
+Title2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title2.TextScaled = true
+Title2.TextSize = 14.000
+
+bar.Name = "bar"
+bar.Parent = Loader
+bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bar.Position = UDim2.new(0, 50, 0, 115)
+bar.Size = UDim2.new(0, 0, 0, 7)
+bar.BackgroundTransparency = 1
+
+Corner2.Name = "Corner2"
+Corner2.Parent = bar
+
+wait(0.5)
+
+Loader:TweenPosition(
+	PositionOpen,           -- Final position the tween should reach
+	Enum.EasingDirection.In, -- Direction of the easing
+	Enum.EasingStyle.Linear,   -- Kind of easing to apply
+	1,                       -- Duration of the tween in seconds
+	true                    -- Whether in-progress tweens are interrupted
+)
+
+wait(2)
+
+Asset.Name = "Asset"
+Asset.Parent = Loader
+Asset.BackgroundColor3 = Color3.fromRGB(28, 115, 255)
+Asset.BackgroundTransparency = 1.000
+Asset.Position = UDim2.new(0, 85, 0, 45)
+Asset.Size = UDim2.new(0, 70, 0, 15)
+Asset.Font = Enum.Font.GothamBlack
+Asset.Text = "Getting User id"
+Asset.TextColor3 = Color3.fromRGB(33, 252, 117 )
+Asset.TextScaled = true
+Asset.TextSize = 14.000
+Asset.Visible = false
+
+for i = 1,10 do
+	wait()
+	Asset.Visible = true
+	Asset.TextTransparency = 1-(i/10)
+end
+
+bar.BackgroundTransparency = 0
+bar:TweenSize(UDim2.new(0, 30,0, 7))
+
+wait(2)
+
+Asset2.Name = "Asset2"
+Asset2.Parent = Loader
+Asset2.BackgroundColor3 = Color3.fromRGB(28, 115, 255)
+Asset2.BackgroundTransparency = 1.000
+Asset2.Position = UDim2.new(0, 85, 0, 60)
+Asset2.Size = UDim2.new(0, 70, 0, 15)
+Asset2.Font = Enum.Font.GothamBlack
+Asset2.Text = "Getting The Source"
+Asset2.TextColor3 = Color3.fromRGB(33, 252, 117 )
+Asset2.TextScaled = true
+Asset2.TextSize = 14.000
+Asset2.Visible = false
+
+for i = 1,10 do
+	wait()
+	Asset2.Visible = true
+	Asset2.TextTransparency = 1-(i/10)
+end
+
+bar.BackgroundTransparency = 0
+bar:TweenSize(UDim2.new(0, 100,0, 7))
+
+wait(2)
+
+Asset3.Name = "Asset3"
+Asset3.Parent = Loader
+Asset3.BackgroundColor3 = Color3.fromRGB(28, 115, 255)
+Asset3.BackgroundTransparency = 1.000
+Asset3.Position = UDim2.new(0, 85, 0, 85)
+Asset3.Size = UDim2.new(0, 70, 0, 15)
+Asset3.Font = Enum.Font.GothamBlack
+Asset3.Text = "Completed!"
+Asset3.TextColor3 = Color3.fromRGB(33, 252, 117 )
+Asset3.TextScaled = true
+Asset3.TextSize = 14.000
+Asset3.Visible = false
+
+for i = 1,10 do
+	wait()
+	Asset3.Visible = true
+	Asset3.TextTransparency = 1-(i/10)
+end
+
+bar.BackgroundTransparency = 0
+bar:TweenSize(UDim2.new(0, 130,0, 7))
+
+loadstring(game:HttpGet("https://pastebin.com/raw/1v3hzRh9"))();
